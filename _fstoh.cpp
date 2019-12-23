@@ -78,6 +78,7 @@ static PyObject *fstoh_fstoh(PyObject *self, PyObject *args)
   'i' specifices the value of '*total' is an integer
   */
   PyObject *ret = Py_BuildValue("i", *total);
+  free(total);//clean up memory leak
   return ret;
 }
 void rfstoh(int num, int *total , char frompeg, char topeg, char auxpeg)
